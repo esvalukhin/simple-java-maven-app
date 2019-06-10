@@ -8,12 +8,16 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                cycletimeStartEvent this
                 sh 'mvn -B -DskipTests clean package' 
+                cycletimeEndEvent this
             }
         }
         stage('Test') {
             steps {
+                cycletimeStartEvent this
                 sh 'mvn test'
+                cycletimeEndEvent
             }
             post {
                 always {
@@ -23,7 +27,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                cycletimeStartEvent this
                 sh './jenkins/scripts/deliver.sh'
+                cycletimeEndEvent this
             }
         }
     }
