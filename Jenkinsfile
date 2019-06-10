@@ -17,7 +17,7 @@ pipeline {
             steps {
                 cycletimeStartEvent this
                 sh 'mvn test'
-                cycletimeEndEvent
+                cycletimeEndEvent this
             }
             post {
                 always {
