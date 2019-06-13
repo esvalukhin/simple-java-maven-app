@@ -37,7 +37,7 @@ public class AppTest
         try {
             Thread.sleep(1000L);1
             assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
-        } catch (AssertionError e) {
+        } catch (Exception e) {
             fail("\"message\" is not \"Hello World!\"");
         }
     }
