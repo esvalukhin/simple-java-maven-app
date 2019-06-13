@@ -24,7 +24,6 @@ public class AppTest
     public void testAppConstructor() {
         try {
             new App();
-            Thread.sleep(5000L);
         } catch (Exception e) {
             fail("Construction failed.");
         }
@@ -35,7 +34,6 @@ public class AppTest
     {
         App.main(null);
         try {
-            Thread.sleep(1000L);
             assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
         } catch (Exception e) {
             fail("\"message\" is not \"Hello World!\"");
